@@ -21,10 +21,9 @@ app.use(cors());
 app.use(express.json()); // To parse JSON data
 app.use(cookieParser()); // To parse cookies
 
-
 app.get('/', (req, res) => {
   res.send('Welcome to Spruces Application!');
-})
+});
 
 // Connect to MongoDB
 connectDB(); // Call the connectDB function to establish the connection
@@ -32,15 +31,10 @@ connectDB(); // Call the connectDB function to establish the connection
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api', jobRoutes);
-
 app.use('/api/profile', documentRoutes);
-// app.use('/api/resumes', resumeRoutes);
 app.use('/api/profiles', profileRoutes);
 app.use(scheduleRoutes); // Register the routes
 app.use(messageRoutes);
-
-
-
 
 // Error handling middleware (optional but recommended)
 app.use((err, req, res, next) => {
@@ -48,11 +42,5 @@ app.use((err, req, res, next) => {
   res.status(500).json({ msg: 'Internal Server Error' });
 });
 
-// Starting the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
+// Export the app for Vercel
 module.exports = app;
-
