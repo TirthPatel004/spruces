@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     // MongoDB connection string
-    const uri = 'mongodb://localhost:27017';
-    //  const uri = 'mongodb+srv://Madhvi7788922:EPeDAEsevq0dnhdR@cluster0.bwp0b.mongodb.net/';
+    // const uri = 'mongodb://localhost:27017';
+     const uri = 'mongodb+srv://Madhvi7788922:EPeDAEsevq0dnhdR@cluster0.bwp0b.mongodb.net/';
 
 
     // Connect to MongoDB without deprecated options
