@@ -22,9 +22,9 @@ app.use(express.json()); // To parse JSON data
 app.use(cookieParser()); // To parse cookies
 
 
-app.get("/", (req, res) => {
-  res.json("Hello");
-});
+app.get('/', (req, res) => {
+  res.send('Welcome to Spruces Application!');
+})
 
 // Connect to MongoDB
 connectDB(); // Call the connectDB function to establish the connection
